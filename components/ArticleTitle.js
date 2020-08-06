@@ -1,5 +1,5 @@
-const ArticleTitle = () => {
-  return <div>ArticleTitle</div>;
+const ArticleTitle = ({ title }) => {
+  return <div>{title}</div>;
 };
 
 export default ArticleTitle;

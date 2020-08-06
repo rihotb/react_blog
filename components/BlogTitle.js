@@ -1,5 +1,5 @@
 const BlogTitle = () => {
-  return <div>BlogTitle</div>;
+  return <div>なんたらブログ</div>;
 };
 
 export default BlogTitle;
