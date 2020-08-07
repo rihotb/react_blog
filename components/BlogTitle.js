@@ -1,5 +1,7 @@
+import LinkNav from "./LinkNav";
+
 const BlogTitle = () => {
-  return <div>なんたらブログ</div>;
+  return <LinkNav href="/" name="なんたらブログ"></LinkNav>;
 };
 
 export default BlogTitle;

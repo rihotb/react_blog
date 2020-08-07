@@ -38,7 +38,11 @@ const HomePage = () => {
           articles.contents.map((article) => {
             return (
               <div key={article.id} className={styles.article}>
-                <ArticleTitle title={article.title} />
+                <ArticleTitle
+                  title={article.title}
+                  slug={article.slug}
+                  id={article.id}
+                />
                 <ArticleDetail content={article.content} />
                 <Date date={article.date} />
                 <Tag tag={article.tag} />

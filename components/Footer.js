@@ -1,9 +1,11 @@
+import LinkNav from "./LinkNav";
+
 const Footer = () => {
   return (
-    <div>
+    <>
       <div>フッター</div>
-      <div>お問い合わせ</div>
-    </div>
+      <LinkNav href="/contact" name="お問い合わせ"></LinkNav>
+    </>
   );
 };
 
