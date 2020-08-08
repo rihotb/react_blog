@@ -1,15 +1,12 @@
-import Link from "next/link";
 import React from "react";
 import { Button } from "@material-ui/core";
 
-const LinkNav = ({ href, name }) => {
+const Submit = () => {
   return (
     <Button color="primary" variant="outlined">
-      <Link href={href}>
-        <a>{name}</a>
-      </Link>
+      送信
     </Button>
   );
 };
 
-export default LinkNav;
+export default Submit;
