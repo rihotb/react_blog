@@ -4,7 +4,7 @@ import TextField from "@material-ui/core/TextField";
 const Name = () => {
   return (
     <div>
-      <TextField id="standard-basic" label="名前" />
+      <TextField id="standard-basic" label="名前" fullWidth />
     </div>
   );
 };

@@ -10,6 +10,7 @@ const ContactContent = () => {
         label="内容"
         rows={4}
         variant="outlined"
+        fullWidth
       />
     </div>
   );

@@ -3,7 +3,7 @@ import { Button } from "@material-ui/core";
 
 const Submit = () => {
   return (
-    <Button color="primary" variant="outlined">
+    <Button color="primary" variant="contained">
       送信
     </Button>
   );
