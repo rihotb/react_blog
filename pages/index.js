@@ -4,7 +4,7 @@ import ArticleTitle from "../components/ArticleTitle";
 import Date from "../components/Date";
 import Tag from "../components/Tag";
 import ArticleDetail from "../components/ArticleDetail";
-import Pagination from "../components/Pagination";
+import Paginate from "../components/Paginate";
 import Footer from "../components/Footer";
 import styles from "../styles/Home.module.css";
 import axios from "axios";
@@ -49,8 +49,9 @@ const HomePage = () => {
               </div>
             );
           })}
-
-        <Pagination />
+      </div>
+      <div className={styles.paginate}>
+        <Paginate />
       </div>
       <div className={styles.footer}>
         <Footer />
