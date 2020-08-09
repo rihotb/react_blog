@@ -1,21 +1,31 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import axios from "axios";
+import Router from "next/router";
 
 const handleChange = () => {
-  fetch("https://weblog.microcms.io/api/v1/contact", {
+  axios({
     method: "POST",
+    url: "https://weblog.microcms.io/api/v1/contact",
     headers: {
       "Content-Type": "application/json",
       "X-WRITE-API-KEY": process.env.X_WRITE_API_KEY,
     },
-    body: JSON.stringify({
-      name: "3nanashi",
+    data: {
+      name: "name",
       email: "nanashi@example.io",
       title: "title",
-      content: "お世話になります。\nエンタープライズプランを使いたいです。",
-    }),
-  });
+      content: "contents",
+    },
+  })
+    .then(() => {
+      Router.push({
+        pathname: "/success",
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 const Submit = () => {
