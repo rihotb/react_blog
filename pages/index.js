@@ -18,7 +18,7 @@ const HomePage = () => {
       //APIからaxiosでデータを取得
       const result = await axios(url, {
         headers: {
-          "X-API-KEY": "3f8af667-8897-42d2-b314-1ac2ff31dc5b",
+          "X-API-KEY": process.env.X_API_KEY,
         },
       });
       //取得したデータをarticlesにセットする

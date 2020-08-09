@@ -1,6 +1,8 @@
+import LinkNav from "./LinkNav";
+
 const Tag = ({ tag }) => {
   //{}のときは中身にJSがかける。結果をreturnとして出す。一般的な書き方。
-  return <div>{tag}</div>;
+  return <LinkNav href="/" name={tag}></LinkNav>;
 };
 
 /* const Tag = () => (

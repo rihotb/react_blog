@@ -16,6 +16,7 @@ export const ContactStyle = styled.div`
     text-align: center;
     font-size: 45px;
     margin: 50px;
+    font-weight: 100;
   }
 
   .material > * {
@@ -36,7 +37,7 @@ export const ContactStyle = styled.div`
 const Contact = () => {
   return (
     <ContactStyle>
-      <div className="title">お問い合わせフォーム</div>
+      <div className="title">Contact Form</div>
       <div className="material">
         <Name />
         <Email />
