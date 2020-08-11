@@ -1,8 +1,10 @@
 import Link from "next/link";
 
-const ArticleTitle = ({ title, slug, id }) => {
+const ArticleTitle = ({ title, slug }) => {
+  //hrefはpagesディレクトリ内のパス。
+  //asはURLバーに表示されるパス。
   return (
-    <Link href={{ pathname: "/detail", query: { id: `${id}` } }} as={`${slug}`}>
+    <Link href={{ pathname: `detail/[slug]` }} as={`detail/${slug}`}>
       <a>{title}</a>
     </Link>
   );
