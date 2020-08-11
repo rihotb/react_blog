@@ -1,7 +1,11 @@
-import LinkNav from "./LinkNav";
+import Link from "next/link";
 
 const BlogTitle = () => {
-  return <LinkNav href="/" name="なんたらブログ"></LinkNav>;
+  return (
+    <Link href="/">
+      <img src="/nantara.png" alt="logo" />
+    </Link>
+  );
 };
 
 export default BlogTitle;
