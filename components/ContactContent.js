@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import TextField from "@material-ui/core/TextField";
+import { context } from "./Provider";
 
 const ContactContent = () => {
+  const { setContactContent } = useContext(context);
   return (
     <div>
       <TextField
@@ -11,6 +13,7 @@ const ContactContent = () => {
         rows={4}
         variant="outlined"
         fullWidth
+        onChange={(e) => setContactContent(e.target.value)}
       />
     </div>
   );

@@ -5,6 +5,7 @@ import ContactTitle from "../components/ContactTitle";
 import ContactContent from "../components/ContactContent";
 import Submit from "../components/Submit";
 import styled from "styled-components";
+import Provider from "../components/Provider";
 
 export const ContactStyle = styled.div`
   width: 600px;
@@ -36,19 +37,21 @@ export const ContactStyle = styled.div`
 
 const Contact = () => {
   return (
-    <ContactStyle>
-      <div className="title">Contact Form</div>
-      <div className="material">
-        <Name />
-        <Email />
-        <ContactTitle />
-        <ContactContent />
-      </div>
-      <div className="buttons">
-        <LinkNav href="/" name="TOPへ戻る"></LinkNav>
-        <Submit />
-      </div>
-    </ContactStyle>
+    <Provider>
+      <ContactStyle>
+        <div className="title">Contact Form</div>
+        <div className="material">
+          <Name />
+          <Email />
+          <ContactTitle />
+          <ContactContent />
+        </div>
+        <div className="buttons">
+          <LinkNav href="/" name="TOPへ戻る"></LinkNav>
+          <Submit />
+        </div>
+      </ContactStyle>
+    </Provider>
   );
 };
 
