@@ -7,7 +7,6 @@ const Name = () => {
   return (
     <div>
       <TextField
-        id="standard-basic"
         label="名前"
         fullWidth
         onChange={(e) => setName(e.target.value)}

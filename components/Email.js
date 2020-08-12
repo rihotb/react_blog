@@ -7,7 +7,6 @@ const Email = () => {
   return (
     <div>
       <TextField
-        id="standard-basic"
         label="メールアドレス"
         fullWidth
         onChange={(e) => setEmail(e.target.value)}
