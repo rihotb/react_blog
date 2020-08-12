@@ -13,7 +13,6 @@ export const DetailStyles = styled.div`
 
   .title {
     text-align: center;
-    font-size: 45px;
     margin: 50px;
   }
 `;
