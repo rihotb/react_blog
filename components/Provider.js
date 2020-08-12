@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Router from "next/router";
 
 export const context = React.createContext();
 
@@ -7,6 +9,53 @@ const Provider = (props) => {
   const [email, setEmail] = useState("");
   const [contactTitle, setContactTitle] = useState("");
   const [contactContent, setContactContent] = useState("");
+  const [submitFlg, setSubmitFlg] = useState(false);
+  const [body, setBody] = useState({});
+
+  /**
+   * 送信ボタンが押されたら動く
+   */
+  useEffect(() => {
+    if (submitFlg) {
+      setData();
+      postAPI();
+    }
+  }, [submitFlg]);
+
+  /**
+   * お問い合わせフォームで入力された各データをbodyオブジェクトにセットする
+   */
+  const setData = () => {
+    //nameプロパティを追加して値（変数name）を代入する
+    body.name = name;
+    body.email = email;
+    body.title = contactTitle;
+    body.content = contactContent;
+    setBody(body);
+  };
+
+  /**
+   * POSTリクエストを送る
+   */
+  const postAPI = () => {
+    axios({
+      method: "POST",
+      url: "https://weblog.microcms.io/api/v1/contact",
+      headers: {
+        "Content-Type": "application/json",
+        "X-WRITE-API-KEY": process.env.X_WRITE_API_KEY,
+      },
+      data: body,
+    })
+      .then(() => {
+        Router.push({
+          pathname: "/success",
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <context.Provider
@@ -19,6 +68,8 @@ const Provider = (props) => {
         setContactTitle,
         contactContent,
         setContactContent,
+        submitFlg,
+        setSubmitFlg,
       }}
     >
       {props.children}

@@ -1,34 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "@material-ui/core";
-import axios from "axios";
-import Router from "next/router";
-
-const handleChange = () => {
-  axios({
-    method: "POST",
-    url: "https://weblog.microcms.io/api/v1/contact",
-    headers: {
-      "Content-Type": "application/json",
-      "X-WRITE-API-KEY": process.env.X_WRITE_API_KEY,
-    },
-    data: {
-      name: "name",
-      email: "nanashi@example.io",
-      title: "title",
-      content: "contents",
-    },
-  })
-    .then(() => {
-      Router.push({
-        pathname: "/success",
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+import { context } from "./Provider";
 
 const Submit = () => {
+  const { setSubmitFlg } = useContext(context);
+
+  //送信ボタンを押されたらsubmitFlgをtrueにする
+  const handleChange = () => {
+    setSubmitFlg(true);
+  };
   return (
     <Button color="primary" variant="contained" onClick={handleChange}>
       送信
