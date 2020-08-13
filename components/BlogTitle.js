@@ -3,7 +3,7 @@ import Link from "next/link";
 const BlogTitle = () => {
   return (
     <Link href="/">
-      <img src="/nantara.png" alt="logo" />
+      <img src="/nantarablog-logo1.svg" alt="logo" width="200" />
     </Link>
   );
 };
