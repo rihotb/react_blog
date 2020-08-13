@@ -15,14 +15,18 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      //APIからaxiosでデータを取得
-      const result = await axios(url, {
-        headers: {
-          "X-API-KEY": process.env.X_API_KEY,
-        },
-      });
-      //取得したデータをarticlesにセットする
-      setArticles(result.data);
+      try {
+        //APIからaxiosでデータを取得
+        const result = await axios(url, {
+          headers: {
+            "X-API-KEY": process.env.X_API_KEY,
+          },
+        });
+        //取得したデータをarticlesにセットする
+        setArticles(result.data);
+      } catch (err) {
+        console.error(err);
+      }
     };
     fetchData();
     //第二引数に空配列を渡すことで、最初の描画の時だけ処理が走るようにする
