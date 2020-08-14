@@ -1,5 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export const FooterStyles = styled.div`
   background-color: gray;
@@ -12,6 +14,11 @@ export const FooterStyles = styled.div`
   * {
     margin-bottom: 10px;
   }
+
+  .links:hover {
+    color: #66ffff;
+  }
+
   img {
     border-radius: 50%;
     background-color: white;
@@ -33,12 +40,19 @@ const Footer = () => {
           <img src="/logo.png" alt="logo" />
         </a>
       </Link>
+
+      <Link href="//github.com/rihotb" prefetch={false}>
+        <a className="links">
+          <FontAwesomeIcon icon={faGithub} />
+        </a>
+      </Link>
       <Link href="/">
-        <a>タグ一覧</a>
+        <a className="links">タグ一覧</a>
       </Link>
       <Link href="/contact">
-        <a>お問い合わせ</a>
+        <a className="links">お問い合わせ</a>
       </Link>
+
       <small>© 2020 nantra blog</small>
     </FooterStyles>
   );
