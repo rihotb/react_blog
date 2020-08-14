@@ -50,12 +50,8 @@ const HomePage = () => {
             );
           })}
       </div>
-      <div className={styles.paginate}>
-        <Paginate />
-      </div>
-      <div className={styles.footer}>
-        <Footer />
-      </div>
+      <Paginate />
+      <Footer />
     </div>
   );
 };

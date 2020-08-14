@@ -6,6 +6,7 @@ import ArticleDetail from "../../components/ArticleDetail";
 import axios from "axios";
 import styled from "styled-components";
 import BlogTitle from "../../components/BlogTitle";
+import Footer from "../../components/Footer";
 
 export const DetailStyles = styled.div`
   width: 600px;
@@ -14,6 +15,10 @@ export const DetailStyles = styled.div`
   .title {
     text-align: center;
     margin: 50px;
+  }
+
+  .article {
+    margin-bottom: 50px;
   }
 `;
 
@@ -42,24 +47,27 @@ const Detail = (props) => {
   }, []);
 
   return (
-    <DetailStyles>
-      <div className="title">
-        <BlogTitle />
-      </div>
-      {/* articles.contents配列がtrueの時（値がある時）だけmapの処理を実行する */}
-      {articles.contents &&
-        articles.contents.map((article) => {
-          return (
-            // 子コンポーネントにユニークなkeyを渡すことで不要な描画を避ける
-            <div key={article.id}>
-              <ArticleTitle title={article.title} slug={article.slug} />
-              <ArticleDetail content={article.content} />
-              <Date date={article.date} />
-              <Tag tag={article.tag} />
-            </div>
-          );
-        })}
-    </DetailStyles>
+    <div>
+      <DetailStyles>
+        <div className="title">
+          <BlogTitle />
+        </div>
+        {/* articles.contents配列がtrueの時（値がある時）だけmapの処理を実行する */}
+        {articles.contents &&
+          articles.contents.map((article) => {
+            return (
+              // 子コンポーネントにユニークなkeyを渡すことで不要な描画を避ける
+              <div key={article.id} className="article">
+                <ArticleTitle title={article.title} slug={article.slug} />
+                <ArticleDetail content={article.content} />
+                <Date date={article.date} />
+                <Tag tag={article.tag} />
+              </div>
+            );
+          })}
+      </DetailStyles>
+      <Footer />
+    </div>
   );
 };
 
