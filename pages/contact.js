@@ -1,11 +1,11 @@
 import LinkNav from "../components/LinkNav";
-import Name from "../components/Name";
-import Email from "../components/Email";
-import ContactTitle from "../components/ContactTitle";
-import ContactContent from "../components/ContactContent";
-import Submit from "../components/Submit";
+import Name from "../components/contact/Name";
+import Email from "../components/contact/Email";
+import ContactTitle from "../components/contact/ContactTitle";
+import ContactContent from "../components/contact/ContactContent";
+import Submit from "../components/contact/Submit";
 import styled from "styled-components";
-import Provider from "../components/Provider";
+import Provider from "../components/contact/Provider";
 
 export const ContactStyle = styled.div`
   width: 600px;
