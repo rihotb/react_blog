@@ -35,25 +35,32 @@ export const FooterStyles = styled.div`
 const Footer = () => {
   return (
     <FooterStyles>
-      <Link href="/">
-        <a>
-          <img src="/logo.png" alt="logo" />
-        </a>
-      </Link>
+      <span>
+        <Link href="/">
+          <a>
+            <img src="/logo.png" alt="logo" />
+          </a>
+        </Link>
+      </span>
 
-      <Link href="//github.com/rihotb" prefetch={false}>
-        <a className="links">
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
-      </Link>
-      <Link href="/">
-        <a className="links">タグ一覧</a>
-      </Link>
-      <Link href="/contact">
-        <a className="links">お問い合わせ</a>
-      </Link>
-
-      <small>© 2020 nantra blog</small>
+      <span>
+        <Link href="//github.com/rihotb" prefetch={false}>
+          <a className="links">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+        </Link>
+      </span>
+      <span>
+        <Link href="/">
+          <a className="links">タグ一覧</a>
+        </Link>
+      </span>
+      <span>
+        <Link href="/contact">
+          <a className="links">お問い合わせ</a>
+        </Link>
+      </span>
+      <small>© 2020 nantara blog</small>
     </FooterStyles>
   );
 };
