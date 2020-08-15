@@ -15,10 +15,6 @@ export const FooterStyles = styled.div`
     margin-bottom: 10px;
   }
 
-  .links:hover {
-    color: #66ffff;
-  }
-
   img {
     border-radius: 50%;
     background-color: white;
@@ -35,10 +31,11 @@ export const FooterStyles = styled.div`
 const Footer = () => {
   return (
     <FooterStyles>
+      <div className="zigzag"></div>
       <span>
         <Link href="/">
           <a>
-            <img src="/logo.png" alt="logo" />
+            <img src="/logo.svg" alt="logo" />
           </a>
         </Link>
       </span>
