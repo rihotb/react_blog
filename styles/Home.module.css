@@ -11,3 +11,19 @@
 .article {
   margin-bottom: 50px;
 }
+
+.article > * {
+  margin-bottom: 10px;
+}
+
+.articleTitle {
+  font-size: 30px;
+}
+
+/* 3行以上ある場合は省略して語尾を…にする */
+.articleContent {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

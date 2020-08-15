@@ -20,6 +20,14 @@ export const DetailStyles = styled.div`
   .article {
     margin-bottom: 50px;
   }
+
+  .article > * {
+    margin-bottom: 10px;
+  }
+
+  .articleTitle {
+    font-size: 30px;
+  }
 `;
 
 const Detail = (props) => {
@@ -58,8 +66,10 @@ const Detail = (props) => {
             return (
               // 子コンポーネントにユニークなkeyを渡すことで不要な描画を避ける
               <div key={article.id} className="article">
-                <ArticleTitle title={article.title} slug={article.slug} />
-                <ArticleDetail content={article.content} />
+                <div className="articleTitle">
+                  <ArticleTitle title={article.title} slug={article.slug} />
+                </div>
+                <ArticleDetail content={article.content} pageName="detail" />
                 <Date date={article.date} />
                 <Tag tag={article.tag} />
               </div>
