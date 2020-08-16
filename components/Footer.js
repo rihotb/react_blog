@@ -48,7 +48,7 @@ const Footer = () => {
         </Link>
       </span>
       <span>
-        <Link href="/">
+        <Link href="/taglist">
           <a className="links">タグ一覧</a>
         </Link>
       </span>

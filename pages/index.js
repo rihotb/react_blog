@@ -49,7 +49,13 @@ const HomePage = () => {
                   <ArticleDetail content={article.content} pageName="index" />
                 </div>
                 <Date date={article.date} />
-                <Tag tag={article.tag} />
+                {article.tags &&
+                  article.tags.map((tag) => {
+                    {
+                      console.log(tag.tagName);
+                    }
+                    <Tag tag={tag.tagName} />;
+                  })}
               </div>
             );
           })}
