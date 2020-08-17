@@ -12,7 +12,7 @@
   margin-bottom: 50px;
 }
 
-.article > * {
+.article>* {
   margin-bottom: 10px;
 }
 
@@ -21,9 +21,15 @@
 }
 
 /* 3行以上ある場合は省略して語尾を…にする */
+
 .articleContent {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 10px;
 }

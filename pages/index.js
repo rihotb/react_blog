@@ -51,10 +51,11 @@ const HomePage = () => {
                 <Date date={article.date} />
                 {article.tags &&
                   article.tags.map((tag) => {
-                    {
-                      console.log(tag.tagName);
-                    }
-                    <Tag tag={tag.tagName} />;
+                    return (
+                      <div key={tag.id} className={styles.tag}>
+                        <Tag tagName={tag.tagName} />
+                      </div>
+                    );
                   })}
               </div>
             );

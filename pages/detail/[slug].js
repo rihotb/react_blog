@@ -28,6 +28,11 @@ export const DetailStyles = styled.div`
   .articleTitle {
     font-size: 30px;
   }
+
+  .tag {
+    display: inline-block;
+    margin-right: 10px;
+  }
 `;
 
 const Detail = (props) => {
@@ -71,7 +76,14 @@ const Detail = (props) => {
                 </div>
                 <ArticleDetail content={article.content} pageName="detail" />
                 <Date date={article.date} />
-                <Tag tag={article.tag} />
+                {article.tags &&
+                  article.tags.map((tag) => {
+                    return (
+                      <div key={tag.id} className="tag">
+                        <Tag tagName={tag.tagName} />
+                      </div>
+                    );
+                  })}
               </div>
             );
           })}

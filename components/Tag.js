@@ -1,32 +1,14 @@
-import LinkNav from "./LinkNav";
+import Link from "next/link";
+import { Button } from "@material-ui/core";
 
-const Tag = ({ tag }) => {
-  //{}のときは中身にJSがかける。結果をreturnとして出す。一般的な書き方。
-  return <LinkNav href="/" name={tag}></LinkNav>;
-};
-
-/* const Tag = () => (
-  //()のときはhtmlの内容だけ書ける。JSはかけない。
-  <div>
-    <span>タグ</span>
-  </div>
-); */
-
-// const Tag = (tag) => <div>{tag}</div>;
-
-/* const Tag = () => (
-   <div>
-    <span>タグ</span>
-  </div>
-); */
-
-//こっちが基本の書き方。<div>じゃなくて<>でもOK
-/* const Tag = (tag) => {
+const Tag = ({ tagName }) => {
   return (
-    <div>
-      <span>{tag}</span>
-    </div>
+    <Button color="primary" variant="outlined">
+      <Link href="/">
+        <a>{tagName}</a>
+      </Link>
+    </Button>
   );
-}; */
+};
 
 export default Tag;
