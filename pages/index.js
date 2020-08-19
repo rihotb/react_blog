@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 import styles from "../styles/Home.module.css";
 import axios from "axios";
 import PageTitle from "../components/PageTitle";
+import Link from "next/link";
 
 const HomePage = () => {
   const [articles, setArticles] = useState([]);
@@ -45,7 +46,14 @@ const HomePage = () => {
             return (
               <div key={article.id} className={styles.article}>
                 <div className={styles.articleTitle}>
-                  <ArticleTitle title={article.title} slug={article.slug} />
+                  <Link
+                    href={{ pathname: `detail/[slug]` }}
+                    as={`detail/${article.slug}`}
+                  >
+                    <a>
+                      <ArticleTitle title={article.title} />
+                    </a>
+                  </Link>
                 </div>
                 <div className={styles.articleContent}>
                   <ArticleDetail content={article.content} pageName="index" />
