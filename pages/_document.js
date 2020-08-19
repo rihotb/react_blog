@@ -1,7 +1,7 @@
 import Document, { Head, Main, NextScript } from "next/document";
-
 import { GA_TRACKING_ID } from "../lib/gtag";
 
+//_document.jsは全てのページで共通のHTMLを書くコンポーネント。ここでGAのscriptタグを埋め込む。
 export default class extends Document {
   render() {
     return (
