@@ -8,6 +8,7 @@ import Paginate from "../components/Paginate";
 import Footer from "../components/Footer";
 import styles from "../styles/Home.module.css";
 import axios from "axios";
+import PageTitle from "../components/PageTitle";
 
 const HomePage = () => {
   const [articles, setArticles] = useState([]);
@@ -34,6 +35,7 @@ const HomePage = () => {
 
   return (
     <div>
+      <PageTitle title="nantara blog" />
       <div className={styles.title}>
         <BlogTitle />
       </div>

@@ -3,6 +3,7 @@ import BlogTitle from "../components/BlogTitle";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Tag from "../components/Tag";
+import PageTitle from "../components/PageTitle";
 
 export const TaglistStyles = styled.div`
   text-align: center;
@@ -48,6 +49,7 @@ const Taglist = () => {
 
   return (
     <TaglistStyles>
+      <PageTitle title="タグ一覧" />
       <div className="title">
         <BlogTitle />
       </div>

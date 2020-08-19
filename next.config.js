@@ -1,3 +1,4 @@
+//process.env（環境変数をまとめて管理するオブジェクト）に.envの内容をいれる
 require("dotenv").config();
 
 module.exports = {

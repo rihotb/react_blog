@@ -6,6 +6,7 @@ import ContactContent from "../components/contact/ContactContent";
 import Submit from "../components/contact/Submit";
 import styled from "styled-components";
 import Provider from "../components/contact/Provider";
+import PageTitle from "../components/PageTitle";
 
 export const ContactStyle = styled.div`
   width: 600px;
@@ -39,6 +40,7 @@ const Contact = () => {
   return (
     <Provider>
       <ContactStyle>
+        <PageTitle title="Contact Form" />
         <div className="title">Contact Form</div>
         <div className="material">
           <Name />

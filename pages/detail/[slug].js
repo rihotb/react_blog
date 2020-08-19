@@ -7,6 +7,7 @@ import axios from "axios";
 import styled from "styled-components";
 import BlogTitle from "../../components/BlogTitle";
 import Footer from "../../components/Footer";
+import PageTitle from "../../components/PageTitle";
 
 export const DetailStyles = styled.div`
   width: 600px;
@@ -72,6 +73,7 @@ const Detail = (props) => {
               // 子コンポーネントにユニークなkeyを渡すことで不要な描画を避ける
               <div key={article.id} className="article">
                 <div className="articleTitle">
+                  <PageTitle title={article.title} />
                   <ArticleTitle title={article.title} slug={article.slug} />
                 </div>
                 <ArticleDetail content={article.content} pageName="detail" />
