@@ -82,7 +82,7 @@ const Detail = (props) => {
                   article.tags.map((tag) => {
                     return (
                       <div key={tag.id} className="tag">
-                        <Tag tagName={tag.tagName} />
+                        <Tag tagName={tag.tagName} tagId={tag.id} />
                       </div>
                     );
                   })}
