@@ -71,7 +71,13 @@ const HomePage = () => {
             );
           })}
       </div>
-      <Paginate />
+      <div className={styles.paginate}>
+        <Paginate
+          limit={articles.limit}
+          offset={articles.offset}
+          total={articles.totalCount}
+        />
+      </div>
       <Footer />
     </div>
   );

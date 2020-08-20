@@ -1,8 +1,21 @@
+import Pagination from "material-ui-flat-pagination";
 import React from "react";
-import Pagination from "@material-ui/lab/Pagination";
 
-const Paginate = () => {
-  return <div></div>;
+const Paginate = ({ limit, offset, total }) => {
+  return (
+    <div>
+      <Pagination
+        //ページあたりの記事数。
+        limit={limit}
+        //スキップする記事数。
+        offset={offset}
+        //記事の総数。
+        total={total}
+        //ボタンがクリックされたら動く。
+        onClick={() => console.log("kitayo")}
+      />
+    </div>
+  );
 };
 
 export default Paginate;

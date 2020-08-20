@@ -12,7 +12,7 @@
   margin-bottom: 50px;
 }
 
-.article>* {
+.article > * {
   margin-bottom: 10px;
 }
 
@@ -32,4 +32,8 @@
 .tag {
   display: inline-block;
   margin-right: 10px;
+}
+
+.paginate {
+  text-align: center;
 }
