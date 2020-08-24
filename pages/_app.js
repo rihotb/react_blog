@@ -1,9 +1,26 @@
-import App from "next/app";
 import Router from "next/router";
-import "../styles/globals.css";
 import * as gtag from "../lib/gtag";
+import { useEffect } from "react";
+import "../styles/globals.css";
+import MainProvider from "../components/MainProvider";
 
-//URLが変更されたらpageview関数が実行される
-Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
+const App = ({ Component, pageProps }) => {
+  useEffect(() => {
+    const handleRouteChange = (path) => {
+      gtag.pageview(path);
+    };
+
+    Router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      Router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, []);
+
+  return (
+    <MainProvider>
+      <Component {...pageProps} />
+    </MainProvider>
+  );
+};
 
 export default App;
