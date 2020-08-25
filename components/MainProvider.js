@@ -10,8 +10,8 @@ const MainProvider = (props) => {
 
   // offsetValueが変更された時に動く
   useEffect(() => {
-    //1ページ目に戻った時か、リロードした時に動く
-    if (pageNumber === 1 || pageNumber === 0) {
+    //1ページ目に戻った時に動く
+    if (pageNumber === 1) {
       router.push("/");
     }
     //offsetValueがtrueの時、つまり1以外のページ番号が押された時に動く
