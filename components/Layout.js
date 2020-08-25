@@ -55,6 +55,8 @@ const Layout = ({ title, query = "" }) => {
   const url = `https://weblog.microcms.io/api/v1/index${query}`;
 
   useEffect(() => {
+    let mounted = true;
+
     const fetchData = async () => {
       try {
         //APIからaxiosでデータを取得
@@ -63,13 +65,17 @@ const Layout = ({ title, query = "" }) => {
             "X-API-KEY": process.env.X_API_KEY,
           },
         });
-        //取得したデータをarticlesにセットする
-        setArticles(result.data);
+        //コンポーネントがマウントされたときのみ、取得したデータをarticlesにセットする
+        if (mounted) {
+          setArticles(result.data);
+        }
       } catch (err) {
         console.error(err);
       }
     };
+
     fetchData();
+    return () => (mounted = false);
     //最初の描画とクエリが変更された時に処理が走る
   }, [query]);
 
