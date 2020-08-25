@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import Layout from "../../components/Layout";
+import { MainContext } from "../../components/MainProvider";
 
 const Tags = (props) => {
-  const queryTagId = `?filters=tags[contains]${props.query.tag}`;
+  const { offsetValue } = useContext(MainContext);
+  const queryOffset = `offset=${offsetValue}`;
+  let queryTagIdAndOffset;
 
-  return <Layout title="nantra blog" query={queryTagId} />;
+  if (offsetValue === 0) {
+    //1ページ目の時
+    queryTagIdAndOffset = `?filters=tags[contains]${props.query.tag}`;
+  } else {
+    //2ページ目以降の時
+    queryTagIdAndOffset = `?filters=tags[contains]${props.query.tag}&&${queryOffset}`;
+  }
+
+  return <Layout title="nantra blog" query={queryTagIdAndOffset} />;
 };
 
 //クエリパラメータを取得するためにgetInitialPropsを使う
