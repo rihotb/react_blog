@@ -50,7 +50,7 @@ export const LayoutStyles = styled.div`
   }
 `;
 
-const Layout = ({ title, query = "" }) => {
+const Layout = ({ title, query = "", name }) => {
   const [articles, setArticles] = useState([]);
   const url = `https://weblog.microcms.io/api/v1/index${query}`;
 
@@ -116,7 +116,11 @@ const Layout = ({ title, query = "" }) => {
             );
           })}
         <div className="paginate">
-          <Paginate limit={articles.limit} total={articles.totalCount} />
+          <Paginate
+            limit={articles.limit}
+            total={articles.totalCount}
+            name={name}
+          />
         </div>
       </LayoutStyles>
       <Footer />

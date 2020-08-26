@@ -1,17 +1,30 @@
 import Pagination from "material-ui-flat-pagination";
 import React, { useContext } from "react";
 import { MainContext } from "./MainProvider";
+import { useRouter } from "next/router";
 
-const Paginate = ({ limit, total }) => {
-  const { offsetValue, setOffsetValue, setPageNumber } = useContext(
-    MainContext
-  );
+const Paginate = ({ limit, total, name }) => {
+  const { offsetValue, setOffsetValue, tags } = useContext(MainContext);
+  const router = useRouter();
+  let slug;
+
+  if (tags.contents) {
+    slug = tags.contents[0].slug;
+  }
 
   const handleClick = (offset, page) => {
     setOffsetValue(offset);
-    setPageNumber(page);
     //ページの一番上に移動する
     scrollTo(0, 0);
+
+    //tagページでPaginateボタンを押したときのルーティング
+    if (name === "tag") {
+      router.push(`/tag/[tag]/page/[page]`, `/tag/${slug}/page/${page}`);
+    }
+    //index, pageページでPaginateボタンを押したときのルーティング
+    if (name === "page" || name === "index") {
+      router.push(`/page/[page]`, `/page/${page}`);
+    }
   };
 
   return (

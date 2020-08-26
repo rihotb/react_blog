@@ -6,7 +6,7 @@ const Page = () => {
   const { offsetValue } = useContext(MainContext);
   const queryOffset = `?offset=${offsetValue}`;
 
-  return <Layout title="nantra blog" query={queryOffset} />;
+  return <Layout title="nantra blog" query={queryOffset} name="page" />;
 };
 
 export default Page;

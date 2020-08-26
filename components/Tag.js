@@ -4,7 +4,7 @@ import { Button } from "@material-ui/core";
 const Tag = ({ tagName, tagSlug }) => {
   return (
     <Button color="primary" variant="outlined">
-      <Link href={{ pathname: `/tags/[tags]` }} as={`/tags/${tagSlug}`}>
+      <Link href={{ pathname: `/tags/[tag]` }} as={`/tags/${tagSlug}`}>
         <a>{tagName}</a>
       </Link>
     </Button>
