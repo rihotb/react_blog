@@ -108,7 +108,7 @@ const Layout = ({ title, query = "" }) => {
                   article.tags.map((tag) => {
                     return (
                       <div key={tag.id} className="tag">
-                        <Tag tagName={tag.tagName} tagId={tag.id} />
+                        <Tag tagName={tag.tagName} tagSlug={tag.slug} />
                       </div>
                     );
                   })}
