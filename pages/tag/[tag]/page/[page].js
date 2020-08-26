@@ -1,15 +1,15 @@
 import React, { useContext, useState, useEffect } from "react";
-import Layout from "../../components/Layout";
-import { MainContext } from "../../components/MainProvider";
+import Layout from "../../../../components/Layout";
+import { MainContext } from "../../../../components/MainProvider";
 import axios from "axios";
-import BlogTitle from "../../components/BlogTitle";
-import ArticleTitle from "../../components/ArticleTitle";
-import Date from "../../components/Date";
-import Tag from "../../components/Tag";
-import ArticleDetail from "../../components/ArticleDetail";
-import Footer from "../../components/Footer";
-import TagPaginate from "../../components/TagPaginate";
-import PageTitle from "../../components/PageTitle";
+import BlogTitle from "../../../../components/BlogTitle";
+import ArticleTitle from "../../../../components/ArticleTitle";
+import Date from "../../../../components/Date";
+import Tag from "../../../../components/Tag";
+import ArticleDetail from "../../../../components/ArticleDetail";
+import Footer from "../../../../components/Footer";
+import TagPaginate from "../../../../components/TagPaginate";
+import PageTitle from "../../../../components/PageTitle";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -52,7 +52,7 @@ import styled from "styled-components";
 //   }
 // `;
 
-const Tags = (props) => {
+const Page = (props) => {
   const [tags, setTags] = useState([]);
   //slugを検索条件にして、タグの情報を取得する
   const url = `https://weblog.microcms.io/api/v1/tags?filters=slug[equals]${props.query.tag}`;
@@ -84,15 +84,9 @@ const Tags = (props) => {
 
   const { tagOffsetValue } = useContext(MainContext);
   const queryOffset = `offset=${tagOffsetValue}`;
-  let queryTagIdAndOffset;
 
-  if (tagOffsetValue === 0) {
-    //1ページ目の時
-    queryTagIdAndOffset = `?filters=tags[contains]${filteredTagId}`;
-  } else {
-    //2ページ目以降の時
-    queryTagIdAndOffset = `?filters=tags[contains]${filteredTagId}&&${queryOffset}`;
-  }
+  //tagページの2ページ目以降のクエリ
+  const queryTagIdAndOffset = `?filters=tags[contains]${filteredTagId}&&${queryOffset}`;
 
   // return <Layout title="nantra blog" query={queryTagIdAndOffset} />;
 
@@ -170,8 +164,8 @@ const Tags = (props) => {
 };
 
 //クエリパラメータを取得するためにgetInitialPropsを使う
-Tags.getInitialProps = ({ query }) => {
+Page.getInitialProps = ({ query }) => {
   return { query };
 };
 
-export default Tags;
+export default Page;
