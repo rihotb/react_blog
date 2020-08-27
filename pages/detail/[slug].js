@@ -36,6 +36,10 @@ export const DetailStyles = styled.div`
   }
 `;
 
+/**
+ * 記事詳細ページ
+ * @param props - 記事一覧のslugが入っている
+ */
 const Detail = (props) => {
   const [articles, setArticles] = useState([]);
   //filtersで絞り込む。equalsで値が完全一致しているコンテンツを取得。
@@ -82,7 +86,7 @@ const Detail = (props) => {
                   article.tags.map((tag) => {
                     return (
                       <div key={tag.id} className="tag">
-                        <Tag tagName={tag.tagName} tagId={tag.id} />
+                        <Tag tagName={tag.tagName} tagSlug={tag.slug} />
                       </div>
                     );
                   })}

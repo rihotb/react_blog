@@ -4,12 +4,12 @@ import { MainContext } from "./MainProvider";
 import { useRouter } from "next/router";
 
 const Paginate = ({ limit, total, name }) => {
-  const { offsetValue, setOffsetValue, tags } = useContext(MainContext);
+  const { offsetValue, setOffsetValue, tag } = useContext(MainContext);
   const router = useRouter();
   let slug;
 
-  if (tags.contents) {
-    slug = tags.contents[0].slug;
+  if (tag.contents) {
+    slug = tag.contents[0].slug;
   }
 
   const handleClick = (offset, page) => {

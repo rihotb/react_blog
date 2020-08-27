@@ -4,15 +4,15 @@ export const MainContext = React.createContext();
 
 const MainProvider = (props) => {
   const [offsetValue, setOffsetValue] = useState(0);
-  const [tags, setTags] = useState([]);
+  const [tag, setTag] = useState([]);
 
   return (
     <MainContext.Provider
       value={{
         offsetValue,
         setOffsetValue,
-        tags,
-        setTags,
+        tag,
+        setTag,
       }}
     >
       {props.children}

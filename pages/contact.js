@@ -36,6 +36,9 @@ export const ContactStyle = styled.div`
   }
 `;
 
+/**
+ * お問い合わせページ
+ */
 const Contact = () => {
   return (
     <Provider>

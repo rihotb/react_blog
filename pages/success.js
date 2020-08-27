@@ -6,6 +6,9 @@ export const SuccessStyles = styled.div`
   text-align: center;
 `;
 
+/**
+ * お問い合わせ送信後のサクセスページ
+ */
 const Success = () => (
   <SuccessStyles>
     <PageTitle title="送信完了" />

@@ -24,6 +24,9 @@ export const TaglistStyles = styled.div`
   }
 `;
 
+/**
+ * タグ一覧ページ
+ */
 const Taglist = () => {
   const [tags, setTags] = useState([]);
   const url = `https://weblog.microcms.io/api/v1/tags`;
