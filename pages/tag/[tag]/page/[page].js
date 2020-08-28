@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../../../../components/Layout";
 import { fetchTagApi } from "../../../../utils/fetchTagApi";
+import { fetchIndexApi } from "../../../../utils/fetchIndexApi";
 
 /**
  * タグページの2ページ目以降
@@ -17,30 +18,20 @@ const Page = (props) => {
   );
 };
 
-//クエリパラメータを取得するためにgetInitialPropsを使う
 Page.getInitialProps = async ({ query }) => {
   const tagQuery = await fetchTagApi(query);
 
   const tagSlug = tagQuery.tagSlug;
   const tagId = tagQuery.tagId;
 
-  //クエリからpageNumberを取得
   const pageNumber = query.page;
 
-  //pageNumberを元に計算してoffsetValueを計算する
+  //pageNumberを元にoffsetValueを計算する
   const offsetValue = (pageNumber - 1) * 10;
 
-  // TagIdとoffsetValueを使ってarticleを記事一覧APIから取得
-  const res = await fetch(
-    `https://weblog.microcms.io/api/v1/index?filters=tags[contains]${tagId}&&offset=${offsetValue}`,
-    {
-      headers: {
-        "X-API-KEY": process.env.X_API_KEY,
-      },
-    }
-  );
+  const queryTagIdAndOffset = `?filters=tags[contains]${tagId}&&offset=${offsetValue}`;
 
-  const articles = await res.json();
+  const articles = await fetchIndexApi(queryTagIdAndOffset);
 
   return { articles, offsetValue, tagSlug };
 };

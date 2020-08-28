@@ -1,4 +1,8 @@
-export async function fetchTagApi(query) {
+/**
+ * タグ情報を取得する
+ * @param  query
+ */
+export const fetchTagApi = async (query) => {
   //queryからtagSlugを取得
   const tagSlug = query.tag;
 
@@ -13,8 +17,8 @@ export async function fetchTagApi(query) {
   );
   const tag = await tagRes.json();
 
-  //tagIdを取得
+  //取得したタグ情報からtagIdを取得
   const tagId = tag.contents[0].id;
 
   return { tagId, tagSlug };
-}
+};

@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../../components/Layout";
 import { fetchTagApi } from "../../utils/fetchTagApi";
+import { fetchIndexApi } from "../../utils/fetchIndexApi";
 
 /**
  * タグページの1ページ目
@@ -18,17 +19,9 @@ Tag.getInitialProps = async ({ query }) => {
   const tagSlug = tagQuery.tagSlug;
   const tagId = tagQuery.tagId;
 
-  // TagIdを使ってarticleを記事一覧APIから取得
-  const res = await fetch(
-    `https://weblog.microcms.io/api/v1/index?filters=tags[contains]${tagId}`,
-    {
-      headers: {
-        "X-API-KEY": process.env.X_API_KEY,
-      },
-    }
-  );
+  const queryTagId = `?filters=tags[contains]${tagId}`;
 
-  const articles = await res.json();
+  const articles = await fetchIndexApi(queryTagId);
 
   return { articles, tagSlug };
 };
