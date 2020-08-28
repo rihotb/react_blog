@@ -1,29 +1,33 @@
 import Pagination from "material-ui-flat-pagination";
-import React, { useContext } from "react";
-import { MainContext } from "./MainProvider";
+import React from "react";
 import { useRouter } from "next/router";
 
-const Paginate = ({ limit, total, name }) => {
-  const { offsetValue, setOffsetValue, tag } = useContext(MainContext);
+const Paginate = ({ limit, total, name, offsetValue, tagSlug }) => {
   const router = useRouter();
-  let slug;
 
-  if (tag.contents) {
-    slug = tag.contents[0].slug;
-  }
-
-  const handleClick = (offset, page) => {
-    setOffsetValue(offset);
+  const handleClick = (page) => {
     //ページの一番上に移動する
     scrollTo(0, 0);
 
     //tagページでPaginateボタンを押したときのルーティング
     if (name === "tag") {
-      router.push(`/tag/[tag]/page/[page]`, `/tag/${slug}/page/${page}`);
+      //1ページ目を押した時
+      if (page === 1) {
+        router.push(`/tags/[tag]`, `/tags/${tagSlug}`);
+        //2ページ目以降を押した時
+      } else {
+        router.push(`/tag/[tag]/page/[page]`, `/tag/${tagSlug}/page/${page}`);
+      }
     }
     //index, pageページでPaginateボタンを押したときのルーティング
     if (name === "page" || name === "index") {
-      router.push(`/page/[page]`, `/page/${page}`);
+      //1ページ目を押した時
+      if (page === 1) {
+        router.push(`/`);
+        //2ページ目以降を押した時
+      } else {
+        router.push(`/page/[page]`, `/page/${page}`);
+      }
     }
   };
 
@@ -36,8 +40,8 @@ const Paginate = ({ limit, total, name }) => {
         offset={offsetValue}
         //記事の総数。
         total={total}
-        //ボタンがクリックされたら動く。offsetには新しい値が入る。2を押したらoffsetは10。
-        onClick={(e, offset, page) => handleClick(offset, page)}
+        //ボタンがクリックされたら動く。
+        onClick={(e, offset, page) => handleClick(page)}
       />
     </div>
   );

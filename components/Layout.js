@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import BlogTitle from "../components/BlogTitle";
 import ArticleTitle from "../components/ArticleTitle";
 import Date from "../components/Date";
@@ -50,39 +50,14 @@ export const LayoutStyles = styled.div`
   }
 `;
 
-const Layout = ({ title, query = "", name }) => {
-  const [articles, setArticles] = useState([]);
-  const url = `https://weblog.microcms.io/api/v1/index${query}`;
-
-  useEffect(() => {
-    let mounted = true;
-
-    const fetchData = async () => {
-      try {
-        //APIからaxiosでデータを取得
-        const result = await axios(url, {
-          headers: {
-            "X-API-KEY": process.env.X_API_KEY,
-          },
-        });
-        //コンポーネントがマウントされたときのみ、取得したデータをarticlesにセットする
-        if (mounted) {
-          setArticles(result.data);
-        }
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    fetchData();
-    return () => (mounted = false);
-    //最初の描画とクエリが変更された時に処理が走る
-  }, [query]);
-
+/**
+ * 記事一覧のレイアウト
+ */
+const Layout = ({ name, articles, offsetValue, tagSlug }) => {
   return (
     <div>
       <LayoutStyles>
-        <PageTitle title={title} />
+        <PageTitle title="nantara blog" />
         <div className="title">
           <BlogTitle />
         </div>
@@ -120,6 +95,8 @@ const Layout = ({ title, query = "", name }) => {
             limit={articles.limit}
             total={articles.totalCount}
             name={name}
+            offsetValue={offsetValue}
+            tagSlug={tagSlug}
           />
         </div>
       </LayoutStyles>
