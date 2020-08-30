@@ -2,8 +2,8 @@ const ArticleDetail = ({ content, pageName }) => {
   //HTMLタグを消去する正規表現
   let contentWithoutTags = content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, "");
 
-  //indexページとtagページ用。HTMLタグなし。
-  if (pageName === "index" || "tag") {
+  //記事一覧ページ用。HTMLタグなし。
+  if (pageName === "index") {
     return <div>{contentWithoutTags}</div>;
   }
 
