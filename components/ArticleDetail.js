@@ -3,10 +3,55 @@ import hljs from "highlight.js";
 import styled from "styled-components";
 
 export const DetailStyles = styled.div`
+  * {
+    line-height: 25px;
+  }
+
+  blockquote {
+    position: relative;
+    margin: 1em 0;
+    padding: 0.1em 1em 0.1em 1em;
+    border-left: 5px solid #ccc;
+    border-radius: 2px;
+  }
+
+  h1 {
+    padding: 0.4em 0.5em;
+    background: #f4f4f4;
+    border-left: solid 5px #7db4e6;
+    border-bottom: solid 3px #d7d7d7;
+    color: #494949;
+  }
+
+  h2 {
+    padding: 0.5em;
+    background: #f4f4f4;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
+    color: #494949;
+  }
+
+  h3 {
+    padding: 0.25em 0.5em;
+    color: #494949;
+    background: transparent;
+    border-left: solid 5px #7db4e6;
+  }
+
   pre {
-    padding: 20px;
     background-color: #eeeeee;
     font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  code {
+    background-color: #eeeeee;
+    font-size: 15px;
+    padding: 3px;
+  }
+
+  a {
+    color: #0066ff;
   }
 `;
 
