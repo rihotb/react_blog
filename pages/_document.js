@@ -7,6 +7,12 @@ export default class extends Document {
     return (
       <html>
         <Head>
+          {/* hightlight.jsのテーマを設定する */}
+          <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css"
+            rel="stylesheet"
+          />
+
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
