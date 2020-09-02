@@ -42,6 +42,7 @@ export const DetailStyles = styled.div`
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 5px;
+    overflow: scroll;
   }
 
   code {
