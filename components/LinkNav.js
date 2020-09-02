@@ -4,11 +4,11 @@ import { Button } from "@material-ui/core";
 
 const LinkNav = ({ href, name }) => {
   return (
-    <Button color="primary" variant="outlined">
-      <Link href={href}>
+    <Link href={href}>
+      <Button color="primary" variant="outlined">
         <a>{name}</a>
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   );
 };
 

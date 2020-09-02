@@ -39,7 +39,6 @@ export const DetailStyles = styled.div`
 
   pre {
     background-color: #eeeeee;
-    font-size: 15px;
     padding: 10px;
     border-radius: 5px;
     overflow: scroll;

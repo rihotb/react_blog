@@ -11,11 +11,11 @@ export const TagStyles = styled.div`
 const Tag = ({ tagName, tagSlug }) => {
   return (
     <TagStyles>
-      <Button color="primary" variant="outlined" className="name">
-        <Link href={{ pathname: `/tags/[tag]` }} as={`/tags/${tagSlug}`}>
+      <Link href={{ pathname: `/tags/[tag]` }} as={`/tags/${tagSlug}`}>
+        <Button color="primary" variant="outlined" className="name">
           <a>{tagName}</a>
-        </Link>
-      </Button>
+        </Button>
+      </Link>
     </TagStyles>
   );
 };
