@@ -10,8 +10,15 @@ import Footer from "../../components/Footer";
 import PageTitle from "../../components/PageTitle";
 
 export const DetailStyles = styled.div`
-  width: 600px;
   margin: 0 auto;
+
+  @media (min-width: 671px) {
+    width: 600px;
+  }
+
+  @media (max-width: 670px) {
+    padding: 10px;
+  }
 
   .title {
     text-align: center;
@@ -28,6 +35,9 @@ export const DetailStyles = styled.div`
 
   .articleTitle {
     font-size: 35px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #333;
     margin-bottom: 30px;
   }
 

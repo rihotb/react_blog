@@ -9,10 +9,20 @@ import Provider from "../components/contact/Provider";
 import PageTitle from "../components/PageTitle";
 
 export const ContactStyle = styled.div`
-  width: 600px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 671px) {
+    width: 600px;
+  }
+
+  @media (max-width: 671px) {
+    padding: 10px;
+    .buttons > * {
+      margin-bottom: 10px;
+    }
+  }
 
   .title {
     text-align: center;

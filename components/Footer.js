@@ -9,7 +9,6 @@ export const FooterStyles = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 100%;
 
   * {
     margin-bottom: 10px;
@@ -31,7 +30,6 @@ export const FooterStyles = styled.div`
 const Footer = () => {
   return (
     <FooterStyles>
-      <div className="zigzag"></div>
       <span>
         <Link href="/">
           <a>

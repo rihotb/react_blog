@@ -8,9 +8,8 @@ export const DetailStyles = styled.div`
   }
 
   blockquote {
-    position: relative;
     margin: 1em 0;
-    padding: 0.1em 1em 0.1em 1em;
+    padding: 0.1em 1em;
     border-left: 5px solid #ccc;
     border-radius: 2px;
   }

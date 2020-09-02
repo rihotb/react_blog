@@ -6,14 +6,20 @@ import Tag from "../components/Tag";
 import ArticleDetail from "../components/ArticleDetail";
 import Paginate from "../components/Paginate";
 import Footer from "../components/Footer";
-import axios from "axios";
 import PageTitle from "../components/PageTitle";
 import Link from "next/link";
 import styled from "styled-components";
 
 export const LayoutStyles = styled.div`
-  width: 600px;
   margin: 0 auto;
+
+  @media (min-width: 671px) {
+    width: 600px;
+  }
+
+  @media (max-width: 670px) {
+    padding: 10px;
+  }
 
   .title {
     text-align: center;
@@ -30,6 +36,10 @@ export const LayoutStyles = styled.div`
 
   .articleTitle {
     font-size: 30px;
+  }
+
+  .articleTitle :hover {
+    color: #0066ff;
   }
 
   /* 3行以上ある場合は省略して語尾を…にする */
