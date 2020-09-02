@@ -20,6 +20,7 @@ export const DetailStyles = styled.div`
     border-left: solid 5px #7db4e6;
     border-bottom: solid 3px #d7d7d7;
     color: #494949;
+    line-height: 30px;
   }
 
   h2 {
@@ -39,8 +40,7 @@ export const DetailStyles = styled.div`
   pre {
     background-color: #eeeeee;
     font-size: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
     border-radius: 5px;
     overflow: scroll;
   }
