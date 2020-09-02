@@ -62,8 +62,8 @@ const Contact = () => {
           <ContactContent />
         </div>
         <div className="buttons">
-          <LinkNav href="/" name="TOPへ戻る"></LinkNav>
           <Submit />
+          <LinkNav href="/" name="TOPへ戻る"></LinkNav>
         </div>
       </ContactStyle>
     </Provider>
