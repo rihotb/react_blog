@@ -17,6 +17,18 @@ const App = ({ Component, pageProps }) => {
     };
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      //10ms後にbodyのクラス名を空白にする。クラス名（no-js）が付与されているときは表示させない。
+      window.setTimeout(() => {
+        document.body.className = document.body.className.replace(
+          /\bno-js\b/,
+          ""
+        );
+      }, 10);
+    });
+  }, []);
+
   return (
     <>
       <Head>
