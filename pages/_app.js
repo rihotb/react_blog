@@ -2,7 +2,6 @@ import Router from "next/router";
 import * as gtag from "../lib/gtag";
 import { useEffect } from "react";
 import "../styles/globals.css";
-import MainProvider from "../components/MainProvider";
 import Head from "next/head";
 
 const App = ({ Component, pageProps }) => {
@@ -38,9 +37,7 @@ const App = ({ Component, pageProps }) => {
           content="initial-scale=1.0, width=device-width,initial-scale=1.0"
         />
       </Head>
-      <MainProvider>
-        <Component {...pageProps} />
-      </MainProvider>
+      <Component {...pageProps} />
     </>
   );
 };
