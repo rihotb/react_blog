@@ -14,7 +14,7 @@ export const Header = (props) => {
     <>
       <PageTitle title={title} />
       <LogoStyles>
-        <BlogLogo />
+        <BlogLogo title={title} />
       </LogoStyles>
     </>
   );
