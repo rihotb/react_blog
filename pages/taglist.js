@@ -1,26 +1,16 @@
 import styled from "styled-components";
-import BlogTitle from "../components/BlogTitle";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Tag from "../components/Tag";
-import PageTitle from "../components/PageTitle";
+import Tag from "../components/article-list/Tag";
+import Header from "../components/Header";
 
 export const TaglistStyles = styled.div`
   text-align: center;
 
-  .title {
-    text-align: center;
-    margin: 50px;
-  }
-
-  .taglist {
+  h1 {
     margin-bottom: 10px;
     font-size: 25px;
-  }
-
-  .tag {
-    display: inline-block;
-    margin-right: 10px;
+    font-weight: 100;
   }
 `;
 
@@ -52,18 +42,11 @@ const Taglist = () => {
 
   return (
     <TaglistStyles>
-      <PageTitle title="タグ一覧" />
-      <div className="title">
-        <BlogTitle />
-      </div>
-      <div className="taglist">タグ一覧</div>
+      <Header title={`タグ一覧`} />
+      <h1>タグ一覧</h1>
       {tags.contents &&
         tags.contents.map((tag) => {
-          return (
-            <div key={tag.id} className="tag">
-              <Tag tagName={tag.tagName} tagSlug={tag.slug} />
-            </div>
-          );
+          return <Tag tagName={tag.tagName} tagSlug={tag.slug} key={tag.id} />;
         })}
     </TaglistStyles>
   );

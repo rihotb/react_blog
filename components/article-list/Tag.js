@@ -3,6 +3,9 @@ import { Button } from "@material-ui/core";
 import styled from "styled-components";
 
 export const TagStyles = styled.div`
+  display: inline-block;
+  margin-right: 10px;
+
   .name {
     text-transform: none;
   }

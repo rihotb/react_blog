@@ -2,6 +2,7 @@ import marked from "marked";
 import hljs from "highlight.js";
 import styled from "styled-components";
 
+//記事詳細ページのスタイル
 export const DetailStyles = styled.div`
   * {
     line-height: 25px;
@@ -55,6 +56,16 @@ export const DetailStyles = styled.div`
   }
 `;
 
+//記事一覧ページの記事詳細部分のスタイル
+export const DetailStylesForIndex = styled.div`
+  /* 3行以上ある場合は省略して語尾を…にする */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 10px;
+`;
+
 const ArticleDetail = ({ content, pageName }) => {
   //hightlight.jsを有効にする
   marked.setOptions({
@@ -64,7 +75,7 @@ const ArticleDetail = ({ content, pageName }) => {
   });
 
   //記事一覧ページ用。HTMLタグなし。
-  if (pageName === "index") {
+  if (pageName === "index" || pageName === "tag") {
     //marked()でMarkdown(content)をHTMLに変換する
     const convertedHTML = marked(content);
     //変換したHTMLからHTMLタグを取り除く
@@ -72,7 +83,9 @@ const ArticleDetail = ({ content, pageName }) => {
       /<("[^"]*"|'[^']*'|[^'">])*>/g,
       ""
     );
-    return <div>{contentWithoutHtmlTags}</div>;
+    return (
+      <DetailStylesForIndex>{contentWithoutHtmlTags}</DetailStylesForIndex>
+    );
   }
 
   //detailページ用。HTMLタグあり。

@@ -19,28 +19,28 @@ export const ContactStyle = styled.div`
 
   @media (max-width: 671px) {
     padding: 10px;
-    .buttons > * {
-      margin-bottom: 10px;
-    }
   }
 
-  .title {
+  h1 {
     text-align: center;
     font-size: 45px;
     margin: 50px;
     font-weight: 100;
   }
+`;
 
-  .material > * {
-    margin: 30px 0;
+export const FormsStyle = styled.div`
+  div {
+    margin: 5px 0;
   }
+`;
 
-  .buttons {
-    margin-bottom: 100px;
-    text-align: center;
-  }
+export const ButtonsStyles = styled.div`
+  margin-bottom: 100px;
+  text-align: center;
 
-  .buttons > * {
+  button {
+    margin-top: 20px;
     width: 200px;
     margin-right: 30px;
   }
@@ -54,17 +54,17 @@ const Contact = () => {
     <Provider>
       <ContactStyle>
         <PageTitle title="Contact Form" />
-        <div className="title">Contact Form</div>
-        <div className="material">
+        <h1>Contact Form</h1>
+        <FormsStyle>
           <Name />
           <Email />
           <ContactTitle />
           <ContactContent />
-        </div>
-        <div className="buttons">
+        </FormsStyle>
+        <ButtonsStyles>
           <Submit />
           <LinkNav href="/" name="TOPへ戻る"></LinkNav>
-        </div>
+        </ButtonsStyles>
       </ContactStyle>
     </Provider>
   );

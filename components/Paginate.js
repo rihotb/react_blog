@@ -1,6 +1,11 @@
 import Pagination from "material-ui-flat-pagination";
 import React from "react";
 import { useRouter } from "next/router";
+import styled from "styled-components";
+
+export const PaginateStyles = styled.div`
+  text-align: center;
+`;
 
 const Paginate = ({ limit, total, name, offsetValue, tagSlug }) => {
   const router = useRouter();
@@ -32,7 +37,7 @@ const Paginate = ({ limit, total, name, offsetValue, tagSlug }) => {
   };
 
   return (
-    <div>
+    <PaginateStyles>
       <Pagination
         //ページあたりの記事数。デフォルト値は10。
         limit={limit}
@@ -43,7 +48,7 @@ const Paginate = ({ limit, total, name, offsetValue, tagSlug }) => {
         //ボタンがクリックされたら動く。
         onClick={(e, offset, page) => handleClick(page)}
       />
-    </div>
+    </PaginateStyles>
   );
 };
 

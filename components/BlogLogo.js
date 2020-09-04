@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const BlogTitle = () => {
+const BlogLogo = () => {
   return (
     <Link href="/">
       <a>
@@ -10,4 +10,4 @@ const BlogTitle = () => {
   );
 };
 
-export default BlogTitle;
+export default BlogLogo;
