@@ -5,6 +5,7 @@ export const ArticleTitleStyles = styled.div`
   h1 {
     font-weight: 300;
   }
+  margin-bottom: 30px;
 `;
 
 export const ArticleTitleStylesForIndex = styled.div`

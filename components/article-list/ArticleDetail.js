@@ -5,7 +5,7 @@ import styled from "styled-components";
 //記事詳細ページのスタイル
 export const DetailStyles = styled.div`
   * {
-    line-height: 25px;
+    line-height: 30px;
   }
 
   blockquote {
@@ -25,10 +25,10 @@ export const DetailStyles = styled.div`
   }
 
   h2 {
-    padding: 0.5em;
-    background: #f4f4f4;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
-    color: #494949;
+    background: #dfefff;
+    box-shadow: 0px 0px 0px 5px #dfefff;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
   }
 
   h3 {
