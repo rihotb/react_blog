@@ -4,10 +4,6 @@ import styled from "styled-components";
 
 //記事詳細ページのスタイル
 export const DetailStyles = styled.div`
-  * {
-    line-height: 30px;
-  }
-
   blockquote {
     margin: 1em 0;
     padding: 0.1em 1em;
