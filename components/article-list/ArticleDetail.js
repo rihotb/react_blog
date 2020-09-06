@@ -4,20 +4,13 @@ import styled from "styled-components";
 
 //記事詳細ページのスタイル
 export const DetailStyles = styled.div`
+  line-height: 1.5;
+
   blockquote {
     margin: 1em 0;
     padding: 0.1em 1em;
     border-left: 5px solid #ccc;
     border-radius: 2px;
-  }
-
-  h1 {
-    padding: 0.4em 0.5em;
-    background: #f4f4f4;
-    border-left: solid 5px #7db4e6;
-    border-bottom: solid 3px #d7d7d7;
-    color: #494949;
-    line-height: 30px;
   }
 
   h2 {
@@ -31,7 +24,7 @@ export const DetailStyles = styled.div`
     padding: 0.25em 0.5em;
     color: #494949;
     background: transparent;
-    border-left: solid 5px #7db4e6;
+    border-left: solid 5px #64bcfc;
   }
 
   pre {
@@ -48,7 +41,7 @@ export const DetailStyles = styled.div`
   }
 
   a {
-    color: #0066ff;
+    color: #0044cc;
   }
 `;
 

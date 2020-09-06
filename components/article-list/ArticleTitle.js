@@ -12,7 +12,7 @@ export const ArticleTitleStylesForIndex = styled.div`
   font-size: 30px;
   margin-bottom: 10px;
   :hover {
-    color: #0066ff;
+    color: #64bcfc;
   }
 `;
 
