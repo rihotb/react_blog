@@ -1,4 +1,4 @@
-import LinkNav from "../components/LinkNav";
+import LinkButton from "../components/LinkButton";
 import styled from "styled-components";
 import PageTitle from "../components/PageTitle";
 
@@ -13,7 +13,7 @@ const Success = () => (
   <SuccessStyles>
     <PageTitle title="送信完了" />
     <p>送信完了しました。</p>
-    <LinkNav href="/" name="TOPへ戻る"></LinkNav>
+    <LinkButton href="/" name="TOPへ戻る"></LinkButton>
   </SuccessStyles>
 );
 

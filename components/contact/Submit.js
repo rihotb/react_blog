@@ -1,6 +1,14 @@
 import React, { useContext } from "react";
-import { Button } from "@material-ui/core";
 import { context } from "./Provider";
+import styled from "styled-components";
+
+export const SubmitButtonStyles = styled.button`
+  padding: 0.5em 1em;
+  color: white;
+  background: ${(props) => props.theme.colors.gray};
+  border-radius: 5px;
+  cursor: pointer;
+`;
 
 const Submit = () => {
   const { setSubmitFlg } = useContext(context);
@@ -9,11 +17,7 @@ const Submit = () => {
   const handleChange = () => {
     setSubmitFlg(true);
   };
-  return (
-    <Button color="primary" variant="contained" onClick={handleChange}>
-      送信
-    </Button>
-  );
+  return <SubmitButtonStyles onClick={handleChange}>送信</SubmitButtonStyles>;
 };
 
 export default Submit;

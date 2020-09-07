@@ -1,4 +1,4 @@
-import LinkNav from "../components/LinkNav";
+import LinkButton from "../components/LinkButton";
 import Name from "../components/contact/Name";
 import Email from "../components/contact/Email";
 import ContactTitle from "../components/contact/ContactTitle";
@@ -63,7 +63,7 @@ const Contact = () => {
         </FormsStyle>
         <ButtonsStyles>
           <Submit />
-          <LinkNav href="/" name="TOPへ戻る"></LinkNav>
+          <LinkButton href="/" name="TOPへ戻る"></LinkButton>
         </ButtonsStyles>
       </ContactStyle>
     </Provider>
