@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export const FooterStyles = styled.div`
-  background-color: #454545;
+  background-color: ${(props) => props.theme.colors.gray};
   color: white;
   display: flex;
   flex-direction: column;

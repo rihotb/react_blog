@@ -3,6 +3,15 @@ import * as gtag from "../lib/gtag";
 import { useEffect } from "react";
 import "../styles/globals.css";
 import Head from "next/head";
+import { ThemeProvider } from "styled-components";
+
+const theme = {
+  colors: {
+    gray: "#454545",
+    lightBlue: "#dfefff",
+    shadeBlue: "#64BCFC",
+  },
+};
 
 const App = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -37,7 +46,9 @@ const App = ({ Component, pageProps }) => {
           content="initial-scale=1.0, width=device-width,initial-scale=1.0"
         />
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 };

@@ -14,17 +14,16 @@ export const DetailStyles = styled.div`
   }
 
   h2 {
-    background: #dfefff;
-    box-shadow: 0px 0px 0px 5px #dfefff;
+    background: ${(props) => props.theme.colors.lightBlue};
+    box-shadow: 0px 0px 0px 5px ${(props) => props.theme.colors.lightBlue};
     border: dashed 2px white;
     padding: 0.2em 0.5em;
   }
 
   h3 {
     padding: 0.25em 0.5em;
-    color: #494949;
     background: transparent;
-    border-left: solid 5px #64bcfc;
+    border-left: solid 5px ${(props) => props.theme.colors.shadeBlue};
   }
 
   pre {
