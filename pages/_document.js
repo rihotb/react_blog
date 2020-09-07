@@ -36,7 +36,7 @@ export default class MyDocument extends Document {
         <Head>
           {/* Google fontsを適用する */}
           <link
-            href="https://fonts.googleapis.com/css2?family=Rounded Mplus 1c&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto Sans JP&display=swap"
             rel="stylesheet"
           />
           {/* hightlight.jsのテーマを設定する */}
