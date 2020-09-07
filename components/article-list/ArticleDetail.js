@@ -42,6 +42,12 @@ export const DetailStyles = styled.div`
   a {
     color: #0044cc;
   }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
 `;
 
 //記事一覧ページの記事詳細部分のスタイル

@@ -9,7 +9,7 @@ export const LayoutStyles = styled.div`
   margin: 0 auto;
 
   @media (min-width: 671px) {
-    width: 600px;
+    width: 700px;
   }
 
   @media (max-width: 670px) {
