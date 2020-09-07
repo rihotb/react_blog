@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const TagButtonStyles = styled.a`
   margin-right: 10px;
+  margin-bottom: 10px;
   display: inline-block;
   padding: 0.3em 1em;
   color: ${(props) => props.theme.colors.gray};
@@ -13,6 +14,7 @@ export const TagButtonStyles = styled.a`
   :hover {
     background: ${(props) => props.theme.colors.gray};
     color: white;
+    cursor: pointer;
   }
 `;
 

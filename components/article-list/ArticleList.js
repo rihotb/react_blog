@@ -5,7 +5,7 @@ import Date from "./Date";
 import Tag from "./Tag";
 
 export const ArticleListStyles = styled.div`
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 `;
 
 export const ArticleList = ({ article, name }) => {
