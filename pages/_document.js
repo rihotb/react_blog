@@ -34,6 +34,11 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
+          {/* Google fontsを適用する */}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Rounded Mplus 1c&display=swap"
+            rel="stylesheet"
+          />
           {/* hightlight.jsのテーマを設定する */}
           <link
             href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css"

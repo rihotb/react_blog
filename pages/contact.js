@@ -23,7 +23,7 @@ export const ContactStyle = styled.div`
 
   h1 {
     text-align: center;
-    font-size: 45px;
+    font-size: 40px;
     margin: 50px;
     font-weight: 100;
   }

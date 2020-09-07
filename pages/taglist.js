@@ -9,7 +9,7 @@ export const TaglistStyles = styled.div`
 
   h1 {
     margin-bottom: 10px;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 100;
   }
 `;
