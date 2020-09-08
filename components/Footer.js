@@ -39,20 +39,18 @@ const Footer = () => {
       </span>
 
       <span>
-        <Link href="//github.com/rihotb" prefetch={false}>
-          <a className="links">
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-        </Link>
+        <a href="https://github.com/rihotb">
+          <FontAwesomeIcon icon={faGithub} />
+        </a>
       </span>
       <span>
         <Link href="/taglist">
-          <a className="links">タグ一覧</a>
+          <a>タグ一覧</a>
         </Link>
       </span>
       <span>
         <Link href="/contact">
-          <a className="links">お問い合わせ</a>
+          <a>お問い合わせ</a>
         </Link>
       </span>
       <small>© 2020 nantara blog</small>
