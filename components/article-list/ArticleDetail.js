@@ -67,11 +67,11 @@ const ArticleDetail = ({ content, pageName }) => {
       return hljs.highlightAuto(code, [lang]).value;
     },
   });
+  //marked()でMarkdown(content)をHTMLに変換する
+  const convertedHTML = marked(content);
 
   //記事一覧ページ用。HTMLタグなし。
   if (pageName === "index" || pageName === "tag") {
-    //marked()でMarkdown(content)をHTMLに変換する
-    const convertedHTML = marked(content);
     //変換したHTMLからHTMLタグを取り除く
     const contentWithoutHtmlTags = convertedHTML.replace(
       /<("[^"]*"|'[^']*'|[^'">])*>/g,
@@ -87,8 +87,8 @@ const ArticleDetail = ({ content, pageName }) => {
     return (
       <DetailStyles>
         <div
-          //marked()でMarkdown(content)をHTMLに変換し、変換したHTMLを描画する
-          dangerouslySetInnerHTML={{ __html: marked(content) }}
+          //変換したHTMLを描画する
+          dangerouslySetInnerHTML={{ __html: convertedHTML }}
         />
       </DetailStyles>
     );
