@@ -8,7 +8,7 @@ export const ArticleTitleStyles = styled.div`
   margin-bottom: 30px;
 `;
 
-export const ArticleTitleStylesForIndex = styled.div`
+export const ArticleTitleStylesForIndex = styled.span`
   font-size: 30px;
   margin-bottom: 10px;
   :hover {

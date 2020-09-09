@@ -82,7 +82,7 @@ const ArticleDetail = ({ content, pageName }) => {
     );
   }
 
-  //detailページ用。HTMLタグあり。
+  //記事詳細ページ用。HTMLタグあり。
   if (pageName === "detail") {
     return (
       <DetailStyles>
