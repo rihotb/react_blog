@@ -1,7 +1,35 @@
 import styled from "styled-components";
 import cheerio from "cheerio";
 
-export const TocStyles = styled.ul``;
+export const TocStyles = styled.ul`
+  padding: 15px 10px 15px 25px;
+  font-size: 100%;
+  margin: 40px 0;
+  background: #f7f7f7;
+  border-radius: 8px;
+  list-style: none;
+
+  :before {
+    content: "目次";
+    font-size: 110%;
+    font-weight: bold;
+  }
+
+  li:before {
+    content: "-";
+    margin-right: 10px;
+  }
+
+  .h2 {
+    margin-left: 10px;
+  }
+  .h3 {
+    margin-left: 20px;
+  }
+  .h4 {
+    margin-left: 30px;
+  }
+`;
 
 //記事詳細画面の目次
 const TableOfContent = ({ convertedHTML }) => {
