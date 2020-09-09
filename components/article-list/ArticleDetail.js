@@ -1,6 +1,7 @@
 import marked from "marked";
 import hljs from "highlight.js";
 import styled from "styled-components";
+import TableOfContent from "./TableOfContent";
 
 //記事詳細ページのスタイル
 export const DetailStyles = styled.div`
@@ -60,7 +61,7 @@ export const DetailStylesForIndex = styled.div`
   margin-bottom: 10px;
 `;
 
-const ArticleDetail = ({ content, pageName }) => {
+const ArticleDetail = ({ content, pageName, toc }) => {
   //hightlight.jsを有効にする
   marked.setOptions({
     highlight: function (code, lang) {
@@ -86,6 +87,8 @@ const ArticleDetail = ({ content, pageName }) => {
   if (pageName === "detail") {
     return (
       <DetailStyles>
+        {/* tocがtrueの時だけ目次を表示する */}
+        {toc && <TableOfContent convertedHTML={convertedHTML} />}
         <div
           //変換したHTMLを描画する
           dangerouslySetInnerHTML={{ __html: convertedHTML }}

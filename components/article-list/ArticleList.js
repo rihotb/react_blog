@@ -12,7 +12,11 @@ export const ArticleList = ({ article, name }) => {
   return (
     <ArticleListStyles>
       <ArticleTitle title={article.title} slug={article.slug} pageName={name} />
-      <ArticleDetail content={article.content} pageName={name} />
+      <ArticleDetail
+        content={article.content}
+        pageName={name}
+        toc={article.toc}
+      />
       <Date date={article.date} />
       {article.tags &&
         article.tags.map((tag) => {
