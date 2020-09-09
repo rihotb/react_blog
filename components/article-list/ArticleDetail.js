@@ -15,6 +15,7 @@ export const DetailStyles = styled.div`
   }
 
   h2 {
+    margin-top: 50px;
     background: ${(props) => props.theme.colors.lightBlue};
     box-shadow: 0px 0px 0px 5px ${(props) => props.theme.colors.lightBlue};
     border: dashed 2px white;
@@ -58,10 +59,10 @@ export const DetailStylesForIndex = styled.div`
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin: 10px 0;
 `;
 
-const ArticleDetail = ({ content, pageName, toc }) => {
+const ArticleDetail = ({ content, name, toc }) => {
   //hightlight.jsを有効にする
   marked.setOptions({
     highlight: function (code, lang) {
@@ -72,7 +73,7 @@ const ArticleDetail = ({ content, pageName, toc }) => {
   const convertedHTML = marked(content);
 
   //記事一覧ページ用。HTMLタグなし。
-  if (pageName === "index" || pageName === "tag") {
+  if (name === "index" || name === "tag") {
     //変換したHTMLからHTMLタグを取り除く
     const contentWithoutHtmlTags = convertedHTML.replace(
       /<("[^"]*"|'[^']*'|[^'">])*>/g,
@@ -84,7 +85,7 @@ const ArticleDetail = ({ content, pageName, toc }) => {
   }
 
   //記事詳細ページ用。HTMLタグあり。
-  if (pageName === "detail") {
+  if (name === "detail") {
     return (
       <DetailStyles>
         {/* tocがtrueの時だけ目次を表示する */}

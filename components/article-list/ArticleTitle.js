@@ -5,7 +5,7 @@ export const ArticleTitleStyles = styled.div`
   h1 {
     font-weight: 300;
   }
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `;
 
 export const ArticleTitleStylesForIndex = styled.span`
@@ -16,8 +16,8 @@ export const ArticleTitleStylesForIndex = styled.span`
   }
 `;
 
-const ArticleTitle = ({ title, slug, pageName }) => {
-  if (pageName === "index" || pageName === "tag") {
+const ArticleTitle = ({ title, slug, name }) => {
+  if (name === "index" || name === "tag") {
     return (
       <ArticleTitleStylesForIndex>
         <Link href={{ pathname: `/detail/[slug]` }} as={`/detail/${slug}`}>
@@ -27,7 +27,7 @@ const ArticleTitle = ({ title, slug, pageName }) => {
     );
   }
 
-  if (pageName === "detail") {
+  if (name === "detail") {
     return (
       <ArticleTitleStyles>
         <h1>{title}</h1>

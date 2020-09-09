@@ -4,7 +4,7 @@ import cheerio from "cheerio";
 export const TocStyles = styled.ul`
   padding: 15px 10px 15px 25px;
   font-size: 100%;
-  margin: 40px 0;
+  margin: 20px 0 40px 0;
   background: #f7f7f7;
   border-radius: 8px;
   list-style: none;
