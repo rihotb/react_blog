@@ -24,7 +24,7 @@ const Layout = ({ name, articles, offsetValue, tagSlug, title, url }) => {
     return (
       <div>
         <LayoutStyles>
-          <Header title={title} />
+          <Header title={title} url={url} />
           {articles.contents &&
             articles.contents.map((article) => {
               return (
