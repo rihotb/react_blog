@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ArticleList from "./article-list/ArticleList";
 import styled from "styled-components";
-import SNS from "../components/SNS";
+import Share from "./Share";
 
 export const LayoutStyles = styled.div`
   margin: 0 auto;
@@ -31,7 +31,7 @@ const Layout = ({ name, articles, offsetValue, tagSlug, title, url }) => {
                 <ArticleList article={article} key={article.id} name={name} />
               );
             })}
-          <SNS title={title} url={url} />
+          <Share title={title} url={url} />
         </LayoutStyles>
         <Footer />
       </div>

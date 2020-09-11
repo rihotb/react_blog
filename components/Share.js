@@ -6,7 +6,7 @@ import {
   TwitterIcon,
 } from "react-share";
 
-export const SNSStyles = styled.div`
+export const ShareStyles = styled.div`
   text-align: center;
   margin: 40px 0;
   button {
@@ -15,17 +15,17 @@ export const SNSStyles = styled.div`
 `;
 
 //SNSシェアボタン
-const SNS = ({ title, url }) => {
+const Share = ({ title, url }) => {
   return (
-    <SNSStyles>
+    <ShareStyles>
       <TwitterShareButton title={title} url={url}>
         <TwitterIcon size={32} round />
       </TwitterShareButton>
       <PocketShareButton url={url}>
         <PocketIcon size={32} round />
       </PocketShareButton>
-    </SNSStyles>
+    </ShareStyles>
   );
 };
 
-export default SNS;
+export default Share;

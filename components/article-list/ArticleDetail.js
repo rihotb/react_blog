@@ -5,7 +5,7 @@ import TableOfContent from "./TableOfContent";
 
 //記事詳細ページのスタイル
 export const DetailStyles = styled.div`
-  line-height: 1.5;
+  line-height: 2;
 
   blockquote {
     margin: 1em 0;
@@ -38,7 +38,7 @@ export const DetailStyles = styled.div`
   code {
     background-color: #eeeeee;
     font-size: 15px;
-    padding: 3px;
+    padding: 2px;
   }
 
   a {

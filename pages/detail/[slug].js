@@ -20,7 +20,7 @@ export const DetailStyles = styled.div`
  * @param props
  */
 const Detail = (props) => {
-  const title = props.articles.contents[0].title;
+  const title = props.articles.contents[0].title + " | nantara blog";
   const url = "https://react-blog-phi.vercel.app/detail/" + props.query.slug;
   return (
     <Layout name="detail" articles={props.articles} title={title} url={url} />
