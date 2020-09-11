@@ -21,7 +21,10 @@ export const DetailStyles = styled.div`
  */
 const Detail = (props) => {
   const title = props.articles.contents[0].title;
-  return <Layout name="detail" articles={props.articles} title={title} />;
+  const url = "https://react-blog-phi.vercel.app/detail/" + props.query.slug;
+  return (
+    <Layout name="detail" articles={props.articles} title={title} url={url} />
+  );
 };
 
 //クエリパラメータを取得するためにgetInitialPropsを使う
@@ -30,7 +33,7 @@ Detail.getInitialProps = async ({ query }) => {
 
   const articles = await fetchIndexApi(querySlug);
 
-  return { articles };
+  return { articles, query };
 };
 
 export default Detail;

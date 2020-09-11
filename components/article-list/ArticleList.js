@@ -20,6 +20,21 @@ export const ArticleList = ({ article, name }) => {
           name={name}
           toc={article.toc}
         />
+      </ArticleListStyles>
+    );
+  }
+
+  //記事一覧画面
+  if (name === "index" || name === "tag") {
+    return (
+      <ArticleListStyles>
+        <ArticleTitle title={article.title} slug={article.slug} name={name} />
+        <ArticleDetail
+          content={article.content}
+          name={name}
+          toc={article.toc}
+        />
+        <Date date={article.date} />
         {article.tags &&
           article.tags.map((tag) => {
             return (
@@ -29,19 +44,6 @@ export const ArticleList = ({ article, name }) => {
       </ArticleListStyles>
     );
   }
-
-  //記事一覧画面
-  return (
-    <ArticleListStyles>
-      <ArticleTitle title={article.title} slug={article.slug} name={name} />
-      <ArticleDetail content={article.content} name={name} toc={article.toc} />
-      <Date date={article.date} />
-      {article.tags &&
-        article.tags.map((tag) => {
-          return <Tag tagName={tag.tagName} tagSlug={tag.slug} key={tag.id} />;
-        })}
-    </ArticleListStyles>
-  );
 };
 
 export default ArticleList;
