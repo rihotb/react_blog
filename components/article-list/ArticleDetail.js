@@ -33,12 +33,26 @@ export const DetailStyles = styled.div`
     padding: 10px;
     border-radius: 5px;
     overflow: scroll;
+    font-size: 15px;
+    line-height: 1.5;
   }
 
-  code {
+  p > code {
     background-color: #eeeeee;
     font-size: 15px;
-    padding: 2px;
+    margin: 0 2px;
+    padding: 2px 4px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+  }
+
+  li > code {
+    background-color: #eeeeee;
+    font-size: 15px;
+    margin: 0 2px;
+    padding: 2px 4px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
   }
 
   a {
