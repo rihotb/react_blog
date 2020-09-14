@@ -2,7 +2,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 import { GA_TRACKING_ID } from "../lib/gtag";
 import { ServerStyleSheet } from "styled-components";
 
-//_document.jsは全てのページで共通のHTMLを書くコンポーネント。ここでGAのscriptタグを埋め込む。
+//_document.jsは全てのページで共通のHTMLを書くコンポーネント。サーバー側でのみレンダリングされる。
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -61,13 +61,8 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-          <style>
-            {`
-              .no-js {display:none;}
-            `}
-          </style>
         </Head>
-        <body className={`no-js`}>
+        <body>
           <Main />
           <NextScript />
         </body>
