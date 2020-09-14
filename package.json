@@ -21,7 +21,6 @@
     "marked": "^1.1.1",
     "material-ui-flat-pagination": "^4.1.1",
     "moment": "^2.27.0",
-    "moment-timezone": "^0.5.31",
     "next": "^9.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
