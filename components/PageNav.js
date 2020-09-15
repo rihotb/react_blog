@@ -1,7 +1,46 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-export const PageNavStyles = styled.div``;
+export const PageNavStyles = styled.div`
+  a {
+    border-bottom: 1px #ddd solid;
+    display: block;
+    padding: 10px 30px;
+    color: #0044cc;
+  }
+
+  a :hover {
+    background-color: #f6f6f6;
+  }
+
+  a :first-child {
+    border-top: 1px #ddd solid;
+  }
+
+  div {
+    font-size: 0.825rem;
+    color: #000;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: 600px) {
+    display: flex;
+    margin: 30px 0;
+
+    a {
+      flex: 1;
+    }
+
+    a,
+    a:first-child {
+      border: none;
+    }
+
+    .next {
+      text-align: right;
+    }
+  }
+`;
 
 //前後記事のナビゲーション
 const PageNav = ({ allArticles, articleSlug }) => {
@@ -24,8 +63,8 @@ const PageNav = ({ allArticles, articleSlug }) => {
       {prev ? (
         <Link href={"/detail/" + prev.slug}>
           <a>
-            <span>前の記事</span>
-            <span>{prev.title}</span>
+            <div>前の記事</div>
+            <p>{prev.title}</p>
           </a>
         </Link>
       ) : (
@@ -33,9 +72,9 @@ const PageNav = ({ allArticles, articleSlug }) => {
       )}
       {next ? (
         <Link href={"/detail/" + next.slug}>
-          <a>
-            <span>次の記事</span>
-            <span>{next.title}</span>
+          <a className="next">
+            <div>次の記事</div>
+            <p>{next.title}</p>
           </a>
         </Link>
       ) : (

@@ -37,15 +37,7 @@ export const DetailStyles = styled.div`
     line-height: 1.5;
   }
 
-  p > code {
-    background-color: #eeeeee;
-    font-size: 15px;
-    margin: 0 2px;
-    padding: 2px 4px;
-    border: 1px solid #ddd;
-    border-radius: 2px;
-  }
-
+  p > code,
   li > code {
     background-color: #eeeeee;
     font-size: 15px;
