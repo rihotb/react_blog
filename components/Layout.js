@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import ArticleList from "./article-list/ArticleList";
 import styled from "styled-components";
 import Share from "./Share";
+import PageNav from "./PageNav";
 
 export const LayoutStyles = styled.div`
   margin: 0 auto;
@@ -18,7 +19,16 @@ export const LayoutStyles = styled.div`
   }
 `;
 
-const Layout = ({ name, articles, offsetValue, tagSlug, title, url }) => {
+const Layout = ({
+  name,
+  articles,
+  offsetValue,
+  tagSlug,
+  title,
+  url,
+  allArticles,
+  articleSlug,
+}) => {
   //記事詳細画面のレイアウト
   if (name === "detail") {
     return (
@@ -32,6 +42,7 @@ const Layout = ({ name, articles, offsetValue, tagSlug, title, url }) => {
               );
             })}
           <Share title={title} url={url} />
+          <PageNav allArticles={allArticles} articleSlug={articleSlug} />
         </LayoutStyles>
         <Footer />
       </div>

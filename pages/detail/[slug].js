@@ -22,8 +22,16 @@ export const DetailStyles = styled.div`
 const Detail = (props) => {
   const title = props.articles.contents[0].title + " | nantara blog";
   const url = "https://react-blog-phi.vercel.app/detail/" + props.query.slug;
+
   return (
-    <Layout name="detail" articles={props.articles} title={title} url={url} />
+    <Layout
+      name="detail"
+      articles={props.articles}
+      title={title}
+      url={url}
+      allArticles={props.allArticles}
+      articleSlug={props.query.slug}
+    />
   );
 };
 
@@ -32,8 +40,9 @@ Detail.getInitialProps = async ({ query }) => {
   const querySlug = `?filters=slug[equals]${query.slug}`;
 
   const articles = await fetchIndexApi(querySlug);
+  const allArticles = await fetchIndexApi();
 
-  return { articles, query };
+  return { articles, query, allArticles };
 };
 
 export default Detail;
