@@ -8,7 +8,7 @@ export const TaglistStyles = styled.div`
   text-align: center;
 
   h1 {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-size: 30px;
     font-weight: 100;
   }
