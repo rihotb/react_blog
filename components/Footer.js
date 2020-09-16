@@ -31,11 +31,7 @@ const Footer = () => {
   return (
     <FooterStyles>
       <span>
-        <Link href="/">
-          <a>
-            <img src="/logo.svg" alt="logo" />
-          </a>
-        </Link>
+        <img src="/logo.svg" alt="logo" />
       </span>
 
       <span>
