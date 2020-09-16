@@ -75,8 +75,18 @@ const ArticleDetail = ({ content, name, toc }) => {
       return hljs.highlightAuto(code, [lang]).value;
     },
   });
+
+  const renderer = new marked.Renderer();
+  const linkRenderer = renderer.link;
+
+  //aタグにtarget="_blank"とrel="noopener"を追加して、別タブで開くようにする
+  renderer.link = (href, title, text) => {
+    const html = linkRenderer.call(renderer, href, title, text);
+    return html.replace(/^<a /, '<a target="_blank" rel="noopener" ');
+  };
+
   //marked()でMarkdown(content)をHTMLに変換する
-  const convertedHTML = marked(content);
+  const convertedHTML = marked(content, { renderer });
 
   //記事一覧ページ用。HTMLタグなし。
   if (name === "index" || name === "tag") {
