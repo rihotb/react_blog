@@ -21,7 +21,7 @@ export const DetailStyles = styled.div`
  */
 const Detail = (props) => {
   const title = props.articles.contents[0].title + " | nantara blog";
-  const url = "https://react-blog-phi.vercel.app/detail/" + props.query.slug;
+  const url = "https://nantara-blog.tokyo/detail/" + props.query.slug;
 
   return (
     <Layout

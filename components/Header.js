@@ -8,11 +8,12 @@ export const LogoStyles = styled.div`
 `;
 
 export const Header = (props) => {
+  const { url } = props;
   const { title = "nantara blog" } = props;
 
   return (
     <>
-      <PageTitle title={title} />
+      <PageTitle title={title} url={url} />
       <LogoStyles>
         <BlogLogo title={title} />
       </LogoStyles>
