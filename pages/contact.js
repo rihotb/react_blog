@@ -23,8 +23,9 @@ export const ContactStyle = styled.div`
 
   h1 {
     text-align: center;
-    font-size: 40px;
-    margin: 50px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 30px;
     font-weight: 100;
   }
 `;
