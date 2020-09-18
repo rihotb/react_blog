@@ -43,7 +43,13 @@ export const ButtonsStyles = styled.div`
   button {
     margin-top: 20px;
     width: 200px;
-    margin-right: 30px;
+    font-size: 15px;
+  }
+
+  @media (min-width: 671px) {
+    button {
+      margin-right: 30px;
+    }
   }
 `;
 
