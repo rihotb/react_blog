@@ -53,8 +53,8 @@ const Contact = () => {
   return (
     <Provider>
       <ContactStyle>
-        <PageTitle title="Contact Form" />
-        <h1>Contact Form</h1>
+        <PageTitle title="お問い合わせ" />
+        <h1>お問い合わせ</h1>
         <FormsStyle>
           <Name />
           <Email />

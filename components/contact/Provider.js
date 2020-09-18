@@ -10,6 +10,9 @@ const Provider = (props) => {
   const [contactTitle, setContactTitle] = useState("");
   const [contactContent, setContactContent] = useState("");
   const [submitFlg, setSubmitFlg] = useState(false);
+  const [nameValidateFlg, setNameValidateFlg] = useState(true);
+  const [emailValidateFlg, setEmailValidateFlg] = useState(true);
+  const [contentlValidateFlg, setContentlValidateFlg] = useState(true);
   const [body, setBody] = useState({});
 
   /**
@@ -70,6 +73,12 @@ const Provider = (props) => {
         setContactContent,
         submitFlg,
         setSubmitFlg,
+        nameValidateFlg,
+        setNameValidateFlg,
+        emailValidateFlg,
+        setEmailValidateFlg,
+        contentlValidateFlg,
+        setContentlValidateFlg,
       }}
     >
       {props.children}

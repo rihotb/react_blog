@@ -11,11 +11,42 @@ export const SubmitButtonStyles = styled.button`
 `;
 
 const Submit = () => {
-  const { setSubmitFlg } = useContext(context);
+  const {
+    setSubmitFlg,
+    name,
+    email,
+    contactContent,
+    setNameValidateFlg,
+    setEmailValidateFlg,
+    setContentlValidateFlg,
+  } = useContext(context);
 
-  //送信ボタンを押されたらsubmitFlgをtrueにする
   const handleChange = () => {
-    setSubmitFlg(true);
+    //名前が入力されているかどうかチェックする
+    if (!name) {
+      setNameValidateFlg(false);
+    } else {
+      setNameValidateFlg(true);
+    }
+
+    //アドレスが入力されているかどうかチェックする
+    if (!email) {
+      setEmailValidateFlg(false);
+    } else {
+      setEmailValidateFlg(true);
+    }
+
+    //内容が入力されているかどうかチェックする
+    if (!contactContent) {
+      setContentlValidateFlg(false);
+    } else {
+      setContentlValidateFlg(true);
+    }
+
+    //名前、アドレス、内容が入力されていれば送信する
+    if (name && email && contactContent) {
+      setSubmitFlg(true);
+    }
   };
   return <SubmitButtonStyles onClick={handleChange}>送信</SubmitButtonStyles>;
 };
