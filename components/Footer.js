@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export const FooterStyles = styled.div`
   background-color: ${(props) => props.theme.colors.gray};
@@ -22,6 +22,10 @@ export const FooterStyles = styled.div`
     margin-top: 50px;
   }
 
+  span a {
+    margin: 0 5px;
+  }
+
   small {
     margin-bottom: 50px;
   }
@@ -37,6 +41,9 @@ const Footer = () => {
       <span>
         <a href="https://github.com/rihotb">
           <FontAwesomeIcon icon={faGithub} />
+        </a>
+        <a href="https://twitter.com/honaka_uw">
+          <FontAwesomeIcon icon={faTwitter} />
         </a>
       </span>
       <span>
