@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import ArticleTitle from "./ArticleTitle";
 import ArticleDetail from "./ArticleDetail";
-import Date from "./Date";
+import PublishedDate from "./PublishedDate";
 import Tag from "./Tag";
+import UpdatedDate from "./UpdatedDate";
 
 export const ArticleListStyles = styled.div`
   margin-bottom: 40px;
@@ -14,7 +15,8 @@ export const ArticleList = ({ article, name }) => {
     return (
       <ArticleListStyles>
         <ArticleTitle title={article.title} slug={article.slug} name={name} />
-        <Date date={article.date} name={name} />
+        <PublishedDate date={article.publishedAt} name={name} />
+        <UpdatedDate date={article.UpdatedAt} />
         <ArticleDetail
           content={article.content}
           name={name}
@@ -34,7 +36,7 @@ export const ArticleList = ({ article, name }) => {
           name={name}
           toc={article.toc}
         />
-        <Date date={article.date} />
+        <PublishedDate date={article.publishedAt} />
         {article.tags &&
           article.tags.map((tag) => {
             return (
