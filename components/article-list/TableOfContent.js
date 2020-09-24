@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import cheerio from "cheerio";
+import { Link } from "react-scroll";
 
 export const TocStyles = styled.ul`
   padding: 15px 10px 15px 25px;
@@ -8,6 +9,10 @@ export const TocStyles = styled.ul`
   background: #f7f7f7;
   border-radius: 8px;
   list-style: none;
+
+  a:hover {
+    cursor: pointer;
+  }
 
   :before {
     content: "目次";
@@ -48,8 +53,10 @@ const TableOfContent = ({ convertedHTML }) => {
     <TocStyles>
       {toc.map((item) => (
         <li className={item.name} key={item.id}>
-          {/* 各見出しに対してaタグを貼る */}
-          <a href={"#" + item.id}>{item.text}</a>
+          {/* リンクを押すと各見出しまでスムーズにスクロールする */}
+          <Link to={item.id} smooth={true} offset={-20} duration={500}>
+            {item.text}
+          </Link>
         </li>
       ))}
     </TocStyles>
